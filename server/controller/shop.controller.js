@@ -35,5 +35,18 @@ export const controllerForEmailVerification = async (req, res, next) => {
   }
 };
 
+export const controllerForAuthenticateUser = async (req, res, next) => {
+  try {
+    return res.status(200).json({
+      success: true,
+      message: "Authenticated",
+      data: {
+        shopId: req.shopId,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 export default controllerForShopRegistration

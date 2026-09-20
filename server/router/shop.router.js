@@ -1,10 +1,15 @@
 import express from 'express';
-import controllerForShopRegistration, { controllerForEmailVerification } from '../controller/shop.controller.js';
+import controllerForShopRegistration, { controllerForAuthenticateUser, controllerForEmailVerification } from '../controller/shop.controller.js';
 import validateRegister from '../middleware/shop.validate.js';
-controllerForEmailVerification
+import validateLogin from '../middleware/shop.login.js';
+import controllerForShopLogin from '../controller/login.controller.js';
+import verifyJWT from '../middleware/verifyJWT.js';
+
 const router = express.Router()
 
 router.post('/register', validateRegister , controllerForShopRegistration)
 router.post("/verify-email", controllerForEmailVerification);
+router.post("/login", validateLogin, controllerForShopLogin);
+router.post("/me", verifyJWT, controllerForAuthenticateUser);
 
 export default router
