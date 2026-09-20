@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormInput = ({label,type = "text",name,placeholder,}) => {
+const FormInput = ({label,type = "text",name,placeholder}) => {
     
     
     return (

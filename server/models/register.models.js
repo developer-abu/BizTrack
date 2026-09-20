@@ -32,6 +32,18 @@ const schemaForShopRegistration = new mongoose.Schema(
       required: true,
       default: false,
     },
+    verificationToken: {
+  type: String,
+  default: null,
+},
+
+verificationTokenExpires: {
+  type: Date,
+  default: null,
+  index: {
+  expireAfterSeconds: 0,
+},
+},
   },
   {
     timestamps: true,

@@ -5,8 +5,9 @@ const validateRegister = (req, res, next) => {
   if (!result.success) {
     return res.status(400).json({
       success: false,
-      errors: result.error.issues,
+      message: result.error.issues[0].message,      
     });
+ 
   }
 
   next();

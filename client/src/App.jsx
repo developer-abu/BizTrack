@@ -5,6 +5,8 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import AddProduct from './pages/AddProduct'
+import VerifyEmail from './pages/VerifyEmail'
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
     <Route path="/login" element={<Login/>}/>
     <Route path="/dashboard" element={<Dashboard/>}/>
     <Route path="/products/create" element={<AddProduct/>}/>
+    <Route path="/verify-email" element={<VerifyEmail/>}/>
    </Routes>
    </BrowserRouter>
   )

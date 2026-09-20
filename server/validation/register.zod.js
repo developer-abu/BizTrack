@@ -4,7 +4,7 @@ const registerSchema = z.object({
     shopName: z
       .string()
       .trim()
-      .min(5, "Shop name is required")
+      .min(5, "Shop name character must be at least 5")
       .regex(/^[A-Za-z ]+$/, "Shop name can only contain letters and spaces"),
 
     email: z
