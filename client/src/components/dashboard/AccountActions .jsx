@@ -7,6 +7,18 @@ const navigate = useNavigate();
   const [logoutMessage, setLogoutMessage] = useState("");
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const HandleLogOut = async ()=>{
+
+    const userResponse = confirm("Are you sure?");
+    if(!userResponse){
+       setLogoutMessage("You have not logged out"); 
+       setTimeout(() => {
+        setLogoutMessage("")
+      }, 2000);
+
+      return
+      
+    }
+
 try {
       setIsLoggingOut(true);
 
