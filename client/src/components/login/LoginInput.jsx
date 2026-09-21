@@ -29,9 +29,14 @@ const LoginInput = () => {
 
       setSuccessMessage(response.data.message);
 
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 2000);
+  setTimeout(() => {
+  navigate("/dashboard", {
+    state: {
+      shop: response.data.data,
+    },
+  });
+}, 2000);
+
         } catch (error) {
       setErrorMessage(
         error.response?.data?.message ||
