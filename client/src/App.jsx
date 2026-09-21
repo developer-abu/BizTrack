@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import AddProduct from './pages/AddProduct'
 import VerifyEmail from './pages/VerifyEmail'
 import ProtectedRoute from './protectedRoute/ProtectedRoute'
+import LoginRegisterRouteAccess from './protectedRoute/LoginRegisterRouteAccess'
 
 
 const App = () => {
@@ -14,15 +15,19 @@ const App = () => {
    <BrowserRouter>
    <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/register" element={<Register/>}/>
-    <Route path="/login" element={<Login/>}/>
-
+  
     <Route element={<ProtectedRoute/>}>
         <Route path='/dashboard' element={<Dashboard/>}/> 
         <Route path='/products/create' element={<AddProduct/>}/>
     </Route>
+
+    <Route element={<LoginRegisterRouteAccess/>}>
+      <Route path="/register" element={<Register/>}/>
+    <Route path="/login" element={<Login/>}/>
+    </Route>
  
     <Route path="/verify-email" element={<VerifyEmail/>}/>
+    
    </Routes>
    </BrowserRouter>
   )
