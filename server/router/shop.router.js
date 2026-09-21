@@ -10,6 +10,6 @@ const router = express.Router()
 router.post('/register', validateRegister , controllerForShopRegistration)
 router.post("/verify-email", controllerForEmailVerification);
 router.post("/login", validateLogin, controllerForShopLogin);
-router.post("/me", verifyJWT, controllerForAuthenticateUser);
+router.get("/me", verifyJWT, controllerForAuthenticateUser);
 
 export default router
