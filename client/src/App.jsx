@@ -8,6 +8,7 @@ import AddProduct from './pages/AddProduct'
 import VerifyEmail from './pages/VerifyEmail'
 import ProtectedRoute from './protectedRoute/ProtectedRoute'
 import LoginRegisterRouteAccess from './protectedRoute/LoginRegisterRouteAccess'
+import SeeProduct from './pages/SeeProduct'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
     <Route element={<ProtectedRoute/>}>
         <Route path='/dashboard' element={<Dashboard/>}/> 
         <Route path='/products/create' element={<AddProduct/>}/>
+        <Route path='/see-products' element={<SeeProduct/>}/>
     </Route>
 
     <Route element={<LoginRegisterRouteAccess/>}>

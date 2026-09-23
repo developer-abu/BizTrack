@@ -21,9 +21,9 @@ const QuickActions = () => {
       to: "/inventory",
     },
     {
-      title: "Payments",
-      description: "Record and track customer payments.",
-      to: "/payments",
+      title: "Available Products",
+      description: "Record and track of all available product.",
+      to: "/see-products",
     },
     {
       title: "Sales History",
