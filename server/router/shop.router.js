@@ -5,6 +5,8 @@ import validateLogin from '../middleware/shop.login.js';
 import controllerForShopLogin from '../controller/login.controller.js';
 import verifyJWT from '../middleware/verifyJWT.js';
 import controllerForLogout from '../controller/logout.controller.js';
+import validateSale from '../middleware/validate-sale.js';
+import controllerForSaleCreation from '../controller/sale.controller.js';
 
 const router = express.Router()
 
@@ -13,5 +15,6 @@ router.post("/verify-email", controllerForEmailVerification);
 router.post("/login", validateLogin, controllerForShopLogin);
 router.get("/me", verifyJWT, controllerForAuthenticateUser);
 router.post("/logout", controllerForLogout)
+router.post("/sales/create",verifyJWT,validateSale,controllerForSaleCreation);
 
 export default router
