@@ -355,6 +355,14 @@ const handleDownloadReceipt = (sale) => {
 };
 
 const handleUpdatePayment = async (sale) => {
+  const conformation = confirm("Are you confirm")
+  if(!conformation){
+    setSuccessMessage("You Have Declined Update")
+    setTimeout(() => {
+      setSuccessMessage("")
+    }, 2000);
+    return
+  }
   const amount = Number(amountReceived);
 
   if (!amountReceived.trim() || !Number.isFinite(amount) || amount <= 0) {
