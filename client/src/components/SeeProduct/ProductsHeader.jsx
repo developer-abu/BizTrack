@@ -16,6 +16,12 @@ const ProductsHeader = () => {
         </div>
 
         <Link
+          to="/dashboard"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800 sm:w-auto"
+        >
+          Return To Dashboard
+        </Link>
+        <Link
           to="/products/create"
           className="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800 sm:w-auto"
         >

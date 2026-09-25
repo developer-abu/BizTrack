@@ -21,6 +21,13 @@ const SalesHistoryHeader = () => {
         >
           Create New Sale
         </Link>
+
+        <Link
+          to="/dashboard"
+          className="inline-flex w-fit items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
+        >
+          Return To Dashboard
+        </Link>
       </div>
     </header>
   );

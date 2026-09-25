@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const FormActions = ({ isLoading , onCancel }) => {
+  const navigate = useNavigate()
   return (
     <div className="mt-8 flex flex-col-reverse gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:justify-end">
       {/* Cancel button */}
@@ -20,6 +22,15 @@ const FormActions = ({ isLoading , onCancel }) => {
         className=" cursor-pointer rounded-lg bg-gray-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800  disabled:cursor-not-allowed"
       >
       {isLoading ? "Adding Product..." : "Add Product"}
+      </button>
+
+      <button
+        type="button"
+          disabled={isLoading}
+          onClick={()=>{navigate('/dashboard')}}
+        className=" cursor-pointer rounded-lg bg-gray-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800  disabled:cursor-not-allowed"
+      >
+     Return to Dashboard
       </button>
     </div>
   );

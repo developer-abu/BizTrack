@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios.js";
-
+import { useNavigate } from "react-router-dom";
 const LowStock = () => {
+    const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -107,15 +108,31 @@ setTimeout(() => {
       <div className="mx-auto max-w-7xl">
 
         {/* Page Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
-            Low Stock Products
-          </h1>
+    {/* Page Header */}
+{/* Page Header */}
+<div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
-          <p className="mt-2 text-sm text-gray-500">
-            Products that need restocking.
-          </p>
-        </div>
+  {/* Heading */}
+  <div>
+    <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
+      Low Stock Products
+    </h1>
+
+    <p className="mt-2 text-sm text-gray-500">
+      Products that need restocking.
+    </p>
+  </div>
+
+  {/* Back to Dashboard Button */}
+  <button
+    type="button"
+    onClick={() => navigate("/dashboard")}
+    className="w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700 sm:w-auto"
+  >
+    Back to Dashboard
+  </button>
+
+</div>
 {/* Success Message */}
 {stockUpdateMessage && (
   <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4">

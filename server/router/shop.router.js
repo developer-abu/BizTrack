@@ -7,6 +7,7 @@ import verifyJWT from '../middleware/verifyJWT.js';
 import controllerForLogout from '../controller/logout.controller.js';
 import validateSale from '../middleware/validate-sale.js';
 import controllerForSaleCreation from '../controller/sale.controller.js';
+import controllerForAccountDeletion from '../controller/delete.account.controller.js';
 
 const router = express.Router()
 
@@ -16,5 +17,6 @@ router.post("/login", validateLogin, controllerForShopLogin);
 router.get("/me", verifyJWT, controllerForAuthenticateUser);
 router.post("/logout", controllerForLogout)
 router.post("/sales/create",verifyJWT,validateSale,controllerForSaleCreation);
+router.delete("/delete",verifyJWT,controllerForAccountDeletion);
 
 export default router

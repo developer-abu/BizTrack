@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import api from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
+
 const AccountActions = () => {
 
 const navigate = useNavigate();
   const [logoutMessage, setLogoutMessage] = useState("");
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [isDeletingAccount, setIsDeletingAccount] = useState(false);
+
   const HandleLogOut = async ()=>{
 
     const userResponse = confirm("Are you sure?");
@@ -39,6 +42,34 @@ try {
       setIsLoggingOut(false);
     }
   };
+
+const handleDeleteAccount = async () => {
+  const confirmation = confirm(
+    "Are you sure you want to permanently delete your account and all related data? This action cannot be undone."
+  );
+setIsDeletingAccount(true)
+  if (!confirmation) {
+    return;
+  }
+
+  try {
+    const response = await api.delete("/delete");
+
+    if (response.data.success) {
+      navigate("/login")
+    }
+
+  } catch (error) {
+   
+
+    setLogoutMessage(
+      error.response?.data?.message ||
+        "Failed to delete account"
+    );
+  }finally{
+    setIsDeletingAccount(false)
+  }
+};
 
   return (
     // Account actions section
@@ -77,13 +108,19 @@ try {
       {logoutMessage}
     </p>
   )}
+
+
 </div>
         {/* Permanent account deletion */}
+      
+
         <button
           type="button"
+          onClick={handleDeleteAccount}
+          disabled={isDeletingAccount}
           className="cursor-pointer rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700"
         >
-          Delete Account Permanently
+          {isDeletingAccount ? "Deleting Account..." : "Delete Account"}
         </button>
 
       </div>
