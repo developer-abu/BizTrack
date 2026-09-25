@@ -1,7 +1,5 @@
 import salesZodPaymentSchema from "../validation/payment.update.zod.js";
 
-
-
 const validateSalesPayment = (req, res, next) => {
   const result = salesZodPaymentSchema.safeParse(req.body);
 

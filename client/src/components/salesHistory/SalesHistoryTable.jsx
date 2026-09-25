@@ -392,6 +392,8 @@ const handleUpdatePayment = async (sale) => {
     );
   }
 };
+
+
   if (loading) {
     return (
       <div className="rounded-xl border bg-white p-8 text-center">

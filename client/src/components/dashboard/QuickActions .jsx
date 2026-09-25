@@ -26,6 +26,11 @@ const QuickActions = () => {
       description: "View your previous sales and receipts.",
       to: "/sales",
     },
+    {
+      title: "Low Stock Reminder",
+      description: "View your less stock product.",
+      to: "/less-stock",
+    },
   ];
 
   return (

@@ -1,7 +1,5 @@
 import updateSalePayment from "../service/update-sale-payment.service.js";
 
-
-
 const controllerForSalePayment = async (req, res, next) => {
   try {
     const updatedSale = await updateSalePayment(
