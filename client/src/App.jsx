@@ -10,6 +10,7 @@ import ProtectedRoute from './protectedRoute/ProtectedRoute'
 import LoginRegisterRouteAccess from './protectedRoute/LoginRegisterRouteAccess'
 import SeeProduct from './pages/SeeProduct'
 import CreateSell from './pages/CreateSell'
+import SalesHistoryPage from './pages/SalesHistoryPage';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/products/create' element={<AddProduct/>}/>
         <Route path='/see-products' element={<SeeProduct/>}/>
         <Route path='/sales/create' element={<CreateSell/>}/>
+        <Route path='/sales' element={<SalesHistoryPage/>}/>
     </Route>
 
     <Route element={<LoginRegisterRouteAccess/>}>

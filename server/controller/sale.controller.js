@@ -8,7 +8,7 @@ const controllerForSaleCreation = async (req, res, next) => {
 
     return res.status(201).json({
       success: true,
-      message: "Sale created successfully",
+      message: "Sale created successfully. Wait few Second, we will redirect you to sales history page where you can download invoice",
       data: sale,
     });
   } catch (error) {

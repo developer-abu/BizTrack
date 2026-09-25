@@ -15,11 +15,7 @@ const QuickActions = () => {
       description: "Add a new product to your inventory.",
       to: "/products/create",
     },
-    {
-      title: "Inventory",
-      description: "View and manage your current stock.",
-      to: "/inventory",
-    },
+ 
     {
       title: "Available Products",
       description: "Record and track of all available product.",
@@ -29,11 +25,6 @@ const QuickActions = () => {
       title: "Sales History",
       description: "View your previous sales and receipts.",
       to: "/sales",
-    },
-    {
-      title: "Reports",
-      description: "View business sales and performance reports.",
-      to: "/reports",
     },
   ];
 

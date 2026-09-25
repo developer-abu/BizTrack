@@ -6,6 +6,7 @@ import ProductSelector from "./ProductSelector";
 import SaleSummary from "./SaleSummary";
 import SaleActions from "./SaleActions";
 import api from "../../api/axios.js";
+import { useNavigate } from "react-router-dom";
 
 
 const CreateSaleForm = () => {
@@ -16,7 +17,7 @@ const CreateSaleForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [createdSale, setCreatedSale] = useState(null);
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -56,12 +57,23 @@ const CreateSaleForm = () => {
       setSelectedProducts([]);
       setGivenAmount("");
 
+
       e.target.reset();
+
+      setTimeout(() => {
+  setSuccessMessage("")
+  navigate('/sales')
+}, 2000);
+
+
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message ||
           "Failed to create sale. Please try again."
       );
+      setTimeout(() => {
+        setErrorMessage("")
+      }, 3000);
     } finally {
       setIsLoading(false);
     }
