@@ -11,7 +11,10 @@ import LoginRegisterRouteAccess from './protectedRoute/LoginRegisterRouteAccess'
 import SeeProduct from './pages/SeeProduct'
 import CreateSell from './pages/CreateSell'
 import SalesHistoryPage from './pages/SalesHistoryPage';
-import LowStock from './pages/Lowstock'
+import ForgotPassword from './pages/ForgotPassword'
+import LowStock from './pages/LowStock';
+import ResetPassword from './pages/ResetPassword'
+
 
 
 
@@ -31,12 +34,15 @@ const App = () => {
     </Route>
 
     <Route element={<LoginRegisterRouteAccess/>}>
-      <Route path="/register" element={<Register/>}/>
+    <Route path="/register" element={<Register/>}/>
     <Route path="/login" element={<Login/>}/>
     </Route>
  
     <Route path="/verify-email" element={<VerifyEmail/>}/>
-    
+    <Route path="/forgot-password" element={<ForgotPassword />}/>
+
+    <Route path="/reset-password" element={<ResetPassword />} />
+
    </Routes>
    </BrowserRouter>
   )

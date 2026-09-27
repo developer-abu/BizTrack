@@ -8,6 +8,10 @@ import controllerForLogout from '../controller/logout.controller.js';
 import validateSale from '../middleware/validate-sale.js';
 import controllerForSaleCreation from '../controller/sale.controller.js';
 import controllerForAccountDeletion from '../controller/delete.account.controller.js';
+import validateForgotPassword from '../middleware/validate-forgot-password.js';
+import forgotPasswordController from '../controller/forgot-password.controller.js';
+import validateResetPassword from './../middleware/validate-reset-password.js';
+import resetPasswordController from '../controller/reset-password.controller.js';
 
 const router = express.Router()
 
@@ -18,5 +22,6 @@ router.get("/me", verifyJWT, controllerForAuthenticateUser);
 router.post("/logout", controllerForLogout)
 router.post("/sales/create",verifyJWT,validateSale,controllerForSaleCreation);
 router.delete("/delete",verifyJWT,controllerForAccountDeletion);
-
+router.post("/forgot-password",validateForgotPassword,forgotPasswordController);
+router.post("/reset-password",validateResetPassword,resetPasswordController);
 export default router
