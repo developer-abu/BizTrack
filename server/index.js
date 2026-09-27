@@ -1,9 +1,19 @@
 import app from "./app.js";
-import envData from "./config/config.js";
 import dbConnection from "./config/database.js";
 
-const PORT= envData.port;
-app.listen(PORT, async ()=>{
-console.log(`BizTrack server is running at port ${PORT}`)
-await dbConnection()
-})
+const PORT = process.env.PORT || 5000;
+
+const startServer = async () => {
+  try {
+    await dbConnection();
+
+    app.listen(PORT, () => {
+      console.log(`BizTrack server is running at port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
