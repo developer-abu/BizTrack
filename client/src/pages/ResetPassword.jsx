@@ -11,6 +11,8 @@ const ResetPassword = () => {
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -142,19 +144,32 @@ const ResetPassword = () => {
                 New Password
               </label>
 
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter new password"
-                autoComplete="new-password"
-                minLength={6}
-                maxLength={12}
-                required
-                disabled={loading}
-                className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 text-sm text-[#202a27] outline-none transition placeholder:text-[#9aa29c] focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee] disabled:bg-gray-100"
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter new password"
+                  autoComplete="new-password"
+                  minLength={6}
+                  maxLength={12}
+                  required
+                  disabled={loading}
+                  className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 pr-20 text-sm text-[#202a27] outline-none transition placeholder:text-[#9aa29c] focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee] disabled:bg-gray-100"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((visible) => !visible)}
+                  aria-label={showPassword ? "Hide new password" : "Show new password"}
+                  aria-pressed={showPassword}
+                  disabled={loading}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-[#7b8780] hover:text-[#27624f] focus:outline-none focus:ring-2 focus:ring-[#34715f] disabled:cursor-not-allowed"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
 
               <p className="mt-2 text-xs leading-5 text-[#65716c]">
                 6–12 characters, including uppercase, lowercase, and a special character.
@@ -169,17 +184,34 @@ const ResetPassword = () => {
                 Confirm New Password
               </label>
 
-              <input
-                id="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm new password"
-                autoComplete="new-password"
-                required
-                disabled={loading}
-                className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 text-sm text-[#202a27] outline-none transition placeholder:text-[#9aa29c] focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee] disabled:bg-gray-100"
-              />
+              <div className="relative">
+                <input
+                  id="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Confirm new password"
+                  autoComplete="new-password"
+                  required
+                  disabled={loading}
+                  className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 pr-20 text-sm text-[#202a27] outline-none transition placeholder:text-[#9aa29c] focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee] disabled:bg-gray-100"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword((visible) => !visible)}
+                  aria-label={
+                    showConfirmPassword
+                      ? "Hide password confirmation"
+                      : "Show password confirmation"
+                  }
+                  aria-pressed={showConfirmPassword}
+                  disabled={loading}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-[#7b8780] hover:text-[#27624f] focus:outline-none focus:ring-2 focus:ring-[#34715f] disabled:cursor-not-allowed"
+                >
+                  {showConfirmPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
 
             <button

@@ -32,33 +32,40 @@ const schemaForShopRegistration = new mongoose.Schema(
       required: true,
       default: false,
     },
+
+    // Email Verification
     verificationToken: {
-  type: String,
-  default: null,
-},
+      type: String,
+      default: null,
+    },
 
-verificationTokenExpires: {
-  type: Date,
-  default: null,
-  index: {
-  expireAfterSeconds: 0,
-},
-resetPasswordToken: {
-  type: String,
-  default: null,
-},
+    verificationTokenExpires: {
+      type: Date,
+      default: null,
+      index: {
+        expireAfterSeconds: 0,
+      },
+    },
 
-resetPasswordTokenExpires: {
-  type: Date,
-  default: null,
-},
-},
+    // Forgot Password
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
+
+    resetPasswordTokenExpires: {
+      type: Date,
+      default: null,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-const shopRegister = mongoose.model("shopRegister", schemaForShopRegistration);
+const shopRegister = mongoose.model(
+  "shopRegister",
+  schemaForShopRegistration
+);
 
 export default shopRegister;
