@@ -22,45 +22,45 @@ const HowItWorksSection = () => {
     },
     {
       number: "04",
-      title: "Track Your Business",
+      title: "Keep Things Up to Date",
       description:
-        "Monitor customers, payments, outstanding dues, sales, inventory, and business reports.",
+        "Browse your products and low-stock list, add stock, and update outstanding payments.",
     },
   ];
 
   return (
     // How it works section
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#edf1eb] py-24 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Section heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="max-w-2xl">
+          <h2 className="font-serif text-4xl leading-tight text-[#202a27] sm:text-5xl">
             How BizTrack Works
           </h2>
 
-          <p className="mt-4 text-base leading-7 text-gray-600">
+          <p className="mt-5 text-base leading-8 text-[#65716c]">
             Start managing your business in a few simple steps.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="relative">
+            <div key={step.number} className="relative border-t border-[#cbd5ca] py-6 pr-6 sm:min-h-56 sm:py-7 lg:border-l lg:border-t-0 lg:pl-6">
 
               {/* Step number */}
-              <span className="text-sm font-bold text-gray-400">
+              <span className="font-serif text-4xl text-[#d8795b]">
                 {step.number}
               </span>
 
               {/* Step title */}
-              <h3 className="mt-3 text-lg font-semibold text-gray-900">
+              <h3 className="mt-7 text-lg font-bold text-[#25342e]">
                 {step.title}
               </h3>
 
               {/* Step description */}
-              <p className="mt-3 text-sm leading-6 text-gray-600">
+              <p className="mt-3 text-sm leading-7 text-[#69756f]">
                 {step.description}
               </p>
 

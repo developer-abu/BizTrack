@@ -73,13 +73,13 @@ setIsDeletingAccount(true)
 
   return (
     // Account actions section
-    <section className="mt-10 rounded-xl border border-gray-200 bg-white p-6">
+    <section className="surface-shadow mt-10 rounded-lg border border-[#dedbd3] bg-white p-6">
       {/* Section heading */}
-      <h2 className="text-xl font-bold text-gray-900">
+      <h2 className="font-serif text-xl font-bold text-[#202a27]">
         Account
       </h2>
 
-      <p className="mt-1 text-sm text-gray-500">
+      <p className="mt-1 text-sm text-[#65716c]">
         Manage your account.
       </p>
 
@@ -92,7 +92,7 @@ setIsDeletingAccount(true)
     onClick={HandleLogOut}
     type="button"
     disabled={isLoggingOut}
-    className="cursor-pointer rounded-lg border border-gray-300 px-5 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+    className="cursor-pointer rounded-md border border-[#c9cec6] px-5 py-3 text-sm font-medium text-[#33443d] transition-colors hover:bg-[#fbfaf7]"
   >
     {isLoggingOut ? "Logging out..." : "Logout"}
   </button>
@@ -118,7 +118,7 @@ setIsDeletingAccount(true)
           type="button"
           onClick={handleDeleteAccount}
           disabled={isDeletingAccount}
-          className="cursor-pointer rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700"
+          className="cursor-pointer rounded-md bg-[#a65c39] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#8d4c30]"
         >
           {isDeletingAccount ? "Deleting Account..." : "Delete Account"}
         </button>

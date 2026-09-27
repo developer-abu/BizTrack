@@ -1,1 +1,60 @@
-@import "tailwindcss"; 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Manrope", "Segoe UI", sans-serif;
+	--color-ink: #202a27;
+	--color-ink-muted: #65716c;
+	--color-brand: #27624f;
+	--color-brand-dark: #1d4e3e;
+	--color-canvas: #f7f4ed;
+}
+
+@layer base {
+	:root {
+		color: #202a27;
+		background: #f7f4ed;
+		font-family: "Manrope", "Segoe UI", sans-serif;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+	}
+
+	body {
+		min-width: 320px;
+		margin: 0;
+		background:
+			radial-gradient(circle at 92% 4%, rgba(52, 113, 95, 0.08), transparent 26rem),
+			#f7f4ed;
+	}
+
+	button,
+	a,
+	input,
+	select,
+	textarea {
+		font: inherit;
+	}
+
+	button,
+	a {
+		transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+	}
+}
+
+@layer utilities {
+	.surface-shadow {
+		box-shadow: 0 18px 50px rgba(32, 42, 39, 0.08), 0 2px 8px rgba(32, 42, 39, 0.04);
+	}
+
+	.brand-mark::before {
+		content: "";
+		display: inline-block;
+		width: 0.55rem;
+		height: 0.55rem;
+		margin-right: 0.45rem;
+		border-radius: 999px;
+		background: #d8795b;
+		vertical-align: 0.12em;
+		box-shadow: 0 0 0 5px rgba(216, 121, 91, 0.14);
+	}
+}

@@ -59,20 +59,20 @@ if(!userConfirmation){
 };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+    <form onSubmit={handleSubmit} className="surface-shadow rounded-lg border border-[#dedbd3] bg-white p-6 sm:p-8">
       {/* Product information */}
       <div>
-        <h2 className="text-lg font-semibold text-gray-900">
+        <h2 className="font-serif text-xl font-semibold text-[#202a27]">
           Product Information
         </h2>
 
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-[#65716c]">
           Enter the basic details of your product.
         </p>
       </div>
 
 {successMessage && (
-  <p className="mt-4 text-sm font-medium text-green-600">
+  <p className="mt-4 text-sm font-medium text-[#34715f]">
     {successMessage}
   </p>
 )}
@@ -137,7 +137,7 @@ if(!userConfirmation){
 <div>
   <label
     htmlFor="quantityType"
-    className="mb-2 block text-sm font-medium text-gray-700"
+    className="mb-2 block text-sm font-semibold text-[#34443d]"
   >
     Quantity Type
   </label>
@@ -145,7 +145,7 @@ if(!userConfirmation){
   <select
     id="quantityType"
     name="quantityType"
-    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-gray-500 focus:ring-1 focus:ring-gray-500"
+    className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 text-sm text-[#202a27] outline-none transition focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee]"
   >
     <option value="">Select quantity type</option>
     <option value="pieces">Pieces</option>

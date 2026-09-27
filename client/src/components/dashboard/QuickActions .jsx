@@ -39,11 +39,11 @@ const QuickActions = () => {
 
       {/* Section heading */}
       <div>
-        <h2 className="text-xl font-bold text-gray-900">
+        <h2 className="font-serif text-xl font-bold text-[#202a27]">
           Quick Actions
         </h2>
 
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-[#65716c]">
           Quickly access your most important business tasks.
         </p>
       </div>

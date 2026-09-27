@@ -44,20 +44,20 @@ try {
   
   return (
     // Dashboard header
-    <header className="border-b border-gray-200 bg-white">
+    <header className="border-b border-[#dedbd3] bg-[#fbfaf7]/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* Brand */}
         <Link
           to="/dashboard"
-          className="text-2xl font-bold tracking-tight text-gray-900"
+          className="brand-mark font-serif text-2xl font-extrabold tracking-tight text-[#202a27]"
         >
           BizTrack
         </Link>
 
         {/* Dashboard title */}
         <div className="hidden sm:block">
-          <h1 className="text-lg font-semibold text-gray-900">
+          <h1 className="font-serif text-lg font-semibold text-[#202a27]">
             Dashboard
           </h1>
         </div>
@@ -68,7 +68,7 @@ try {
     onClick={HandleLogOut}
     type="button"
     disabled={isLoggingOut}
-    className="cursor-pointer rounded-lg border border-gray-300 px-5 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+    className="cursor-pointer rounded-md border border-[#c9cec6] bg-white px-5 py-3 text-sm font-semibold text-[#33443d] transition-colors hover:border-[#76968a] hover:bg-[#edf3ee] hover:text-[#27624f]"
   >
     {isLoggingOut ? "Logging out..." : "Logout"}
   </button>
@@ -77,7 +77,7 @@ try {
     <p
       className={`absolute left-0 top-full mt-2 whitespace-nowrap text-xs font-medium ${
         logoutMessage === "Logged out successfully"
-          ? "text-green-600"
+          ? "text-[#34715f]"
           : "text-red-600"
       }`}
     >

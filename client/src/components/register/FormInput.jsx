@@ -10,7 +10,7 @@ const FormInput = ({label,type = "text",name,placeholder}) => {
       {/* Input label */}
       <label
         htmlFor={name}
-        className="mb-2 block text-sm font-medium text-gray-700"
+        className="mb-2 block text-sm font-semibold text-[#34443d]"
       >
         {label}
       </label>
@@ -21,7 +21,7 @@ const FormInput = ({label,type = "text",name,placeholder}) => {
         name={name}
         type={type}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
+        className="w-full rounded-md border border-[#d8d8d0] bg-white px-4 py-3 text-sm text-[#202a27] outline-none transition placeholder:text-[#9aa29c] focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee]"
       />
 
     </div>

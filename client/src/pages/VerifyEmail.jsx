@@ -42,35 +42,35 @@ const VerifyEmail = () => {
   }, [searchParams]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-xl border p-8 text-center">
+    <div className="flex min-h-screen items-center justify-center bg-[#f7f4ed] px-4">
+      <div className="surface-shadow w-full max-w-md rounded-lg border border-[#dedbd3] bg-white p-8 text-center">
 
         {isLoading ? (
           <>
-            <h1 className="text-2xl font-semibold">
+            <h1 className="font-serif text-2xl font-semibold text-[#202a27]">
               Verifying your email...
             </h1>
 
-            <p className="mt-3 text-gray-500">
+            <p className="mt-3 text-[#65716c]">
               Please wait while we verify your email address.
             </p>
           </>
         ) : (
           <>
-            <h1 className="text-2xl font-semibold">
+            <h1 className="font-serif text-2xl font-semibold text-[#202a27]">
               {isSuccess
                 ? "Email Verified"
                 : "Verification Failed"}
             </h1>
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-[#65716c]">
               {message}
             </p>
 
             {isSuccess && (
               <button
                 onClick={() => navigate("/login")}
-                className="mt-6 rounded-lg bg-black px-6 py-3 text-white"
+                className="mt-6 rounded-md bg-[#27624f] px-6 py-3 text-white hover:bg-[#1d4e3e]"
               >
                 Go to Login
               </button>

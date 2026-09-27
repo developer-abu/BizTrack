@@ -3,25 +3,24 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    // Main navbar
-    <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header className="border-b border-[#dedbd3] bg-[#f7f4ed]">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
 
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold tracking-tight text-gray-900"
+            className="brand-mark text-[1.35rem] font-extrabold text-[#202a27]"
         >
           BizTrack
         </Link>
 
         {/* Navigation */}
-        <nav className="flex items-center gap-2 sm:gap-4">
+        <nav className="flex items-center gap-2 sm:gap-5">
 
           {/* Login button */}
           <Link
             to="/login"
-            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100"
+              className="rounded-md px-4 py-2.5 text-sm font-bold text-[#53645b] hover:text-[#27624f]"
           >
             Login
           </Link>
@@ -29,7 +28,7 @@ const Navbar = () => {
           {/* Register button */}
           <Link
             to="/register"
-            className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="rounded-md bg-[#27624f] px-4 py-2.5 text-sm font-bold text-white hover:bg-[#1d4e3e]"
           >
             Get Started
           </Link>

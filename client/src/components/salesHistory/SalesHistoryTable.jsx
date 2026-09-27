@@ -404,8 +404,8 @@ const handleUpdatePayment = async (sale) => {
 
   if (loading) {
     return (
-      <div className="rounded-xl border bg-white p-8 text-center">
-        <p className="text-gray-600">
+      <div className="surface-shadow rounded-lg border border-[#dedbd3] bg-white p-8 text-center">
+        <p className="text-[#65716c]">
           Loading sales history...
         </p>
       </div>
@@ -414,28 +414,28 @@ const handleUpdatePayment = async (sale) => {
 
   if (error) {
     return (
-      <div className="rounded-xl border border-red-200 bg-red-50 p-6">
-        <p className="text-red-600">{error}</p>
+      <div className="rounded-lg border border-[#e7c4b7] bg-white p-6">
+        <p className="text-[#a65c39]">{error}</p>
       </div>
     );
   }
 
   return (
-    <section className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+    <section className="surface-shadow overflow-hidden rounded-lg border border-[#dedbd3] bg-white">
 
 {/* Success Message */}
 {successMessage && (
-  <div className="mx-4 mt-4 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 sm:mx-6">
+  <div className="mx-4 mt-4 rounded-md border border-[#c9d9ce] bg-[#edf3ee] px-4 py-3 text-sm font-medium text-[#34715f] sm:mx-6">
     {successMessage}
   </div>
 )}
 
-      <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
-        <h2 className="text-lg font-bold text-gray-900">
+      <div className="border-b border-[#eeeae2] px-4 py-5 sm:px-6">
+        <h2 className="font-serif text-xl font-bold text-[#202a27]">
           All Sales
         </h2>
 
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-[#65716c]">
           Recent sales appear first.
         </p>
       </div>
@@ -445,26 +445,26 @@ const handleUpdatePayment = async (sale) => {
     value={search}
     onChange={(e) => setSearch(e.target.value)}
     placeholder="Search by Sale ID..."
-    className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+    className="w-full rounded-md border border-[#d8d8d0] px-4 py-3 text-sm outline-none focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee]"
   />
 
   <button
     type="button"
     onClick={() => setSearch("")}
-    className="rounded-lg border border-gray-300 px-5 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100"
+    className="rounded-md border border-[#c9cec6] px-5 py-3 text-sm font-medium text-[#33443d] hover:bg-[#fbfaf7]"
   >
     Clear
   </button>
 </div>
       {filteredSales.length === 0 ? (
         <div className="px-6 py-12 text-center">
-        <h3 className="text-lg font-semibold text-gray-800">
+        <h3 className="font-serif text-lg font-semibold text-[#202a27]">
   {search.trim()
     ? "No matching sales found"
     : "No sales found"}
 </h3>
 
-<p className="mt-2 text-sm text-gray-500">
+<p className="mt-2 text-sm text-[#65716c]">
   {search.trim()
     ? "Try searching with a different Sale ID."
     : "Your sales history will appear here after creating a sale."}
@@ -472,54 +472,54 @@ const handleUpdatePayment = async (sale) => {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-[#eeeae2]">
+          <thead className="bg-[#f4f6f1]">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Sales ID
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Customer Name
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Products Bought
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Total Price
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Amount Paid
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Due
                 </th>
 
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-gray-500">
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase text-[#7b8780]">
                   Actions
                 </th>
               </tr>
             </thead>
 
-            <tbody className="divide-y divide-gray-200 bg-white">
+            <tbody className="divide-y divide-[#eeeae2] bg-white">
               {filteredSales.map((sale) => (
                 <tr key={sale._id}>
                   {/* Sales ID */}
-                <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-gray-900">
+                <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-[#34443d]">
                     {sale._id}
                     </td>
 
                   {/* Customer Name */}
-                  <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm text-[#65716c]">
                     {sale.buyerName}
                   </td>
 
                   {/* Products Bought */}
-                  <td className="px-4 py-4 text-sm text-gray-700">
+                  <td className="px-4 py-4 text-sm text-[#65716c]">
                     <div className="space-y-1">
                       {sale.items.map((item, index) => (
                         <p key={index}>
@@ -531,23 +531,23 @@ const handleUpdatePayment = async (sale) => {
                   </td>
 
                   {/* Total Price */}
-                  <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-gray-900">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-[#34443d]">
                     ₹{sale.totalAmount.toFixed(2)}
                   </td>
 
                   {/* Amount Paid */}
-                  <td className="whitespace-nowrap px-4 py-4 text-sm text-green-700">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm text-[#34715f]">
                     ₹{sale.paidAmount.toFixed(2)}
                   </td>
 
                   {/* Due */}
                   <td className="whitespace-nowrap px-4 py-4 text-sm">
                     {sale.dueAmount > 0 ? (
-                      <span className="font-medium text-red-600">
+                      <span className="font-medium text-[#a65c39]">
                         ₹{sale.dueAmount.toFixed(2)}
                       </span>
                     ) : (
-                      <span className="text-gray-500">
+                      <span className="text-[#7b8780]">
                         NA
                       </span>
                     )}
@@ -572,13 +572,13 @@ const handleUpdatePayment = async (sale) => {
             setAmountReceived(e.target.value)
           }
           placeholder={`Due: ₹${sale.dueAmount}`}
-          className="w-full rounded-md border border-gray-300 px-3 py-2"
+          className="w-full rounded-md border border-[#d8d8d0] px-3 py-2 focus:border-[#34715f] focus:outline-none focus:ring-2 focus:ring-[#edf3ee]"
         />
 
         <div className="flex gap-2">
           <button
             onClick={() => handleUpdatePayment(sale)}
-            className="rounded-md bg-green-600 px-3 py-2 text-white"
+            className="rounded-md bg-[#27624f] px-3 py-2 text-white hover:bg-[#1d4e3e]"
           >
             Submit
           </button>
@@ -588,7 +588,7 @@ const handleUpdatePayment = async (sale) => {
               setPaymentSaleId(null);
               setAmountReceived("");
             }}
-            className="rounded-md bg-gray-500 px-3 py-2 text-white"
+            className="rounded-md bg-[#69756f] px-3 py-2 text-white hover:bg-[#52615a]"
           >
             Cancel
           </button>
@@ -600,7 +600,7 @@ const handleUpdatePayment = async (sale) => {
           setPaymentSaleId(sale._id);
           setAmountReceived("");
         }}
-        className="rounded-md bg-blue-600 px-3 py-2 text-white"
+        className="rounded-md bg-[#27624f] px-3 py-2 text-white hover:bg-[#1d4e3e]"
       >
         Update Payment
       </button>
@@ -612,7 +612,7 @@ const handleUpdatePayment = async (sale) => {
                     <button
                          type="button"
                          onClick={() => handleDownloadReceipt(sale)}
-                         className="rounded-lg border border-gray-300 px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-100"
+                         className="rounded-md border border-[#c9cec6] px-3 py-2 text-xs font-medium text-[#33443d] hover:bg-[#fbfaf7]"
                           >
                           Download
                           </button>

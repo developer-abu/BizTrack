@@ -58,13 +58,13 @@ const ProductSelector = ({
   };
 
   return (
-    <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
+    <section className="surface-shadow rounded-lg border border-[#dedbd3] bg-white p-5 sm:p-6">
       <div>
-        <h2 className="text-lg font-semibold text-gray-900">
+        <h2 className="font-serif text-xl font-semibold text-[#202a27]">
           Select Products
         </h2>
 
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-[#65716c]">
           Search and add multiple products to this sale.
         </p>
       </div>
@@ -76,18 +76,18 @@ const ProductSelector = ({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search product..."
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-900"
+          className="w-full rounded-md border border-[#d8d8d0] px-4 py-3 text-sm outline-none focus:border-[#34715f] focus:ring-2 focus:ring-[#edf3ee]"
         />
       </div>
 
       {/* Product List */}
-      <div className="mt-4 max-h-64 overflow-y-auto rounded-lg border border-gray-200">
+      <div className="mt-4 max-h-64 overflow-y-auto rounded-md border border-[#dedbd3]">
         {isLoading ? (
-          <p className="p-4 text-sm text-gray-500">
+          <p className="p-4 text-sm text-[#65716c]">
             Loading products...
           </p>
         ) : filteredProducts.length === 0 ? (
-          <p className="p-4 text-sm text-gray-500">
+          <p className="p-4 text-sm text-[#65716c]">
             No products found.
           </p>
         ) : (
@@ -102,24 +102,24 @@ const ProductSelector = ({
                 key={product._id}
                 disabled={isSelected}
                 onClick={() => handleProductSelect(product)}
-                className={`flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left last:border-b-0 ${
+                className={`flex w-full items-center justify-between border-b border-[#eeeae2] px-4 py-3 text-left last:border-b-0 ${
                   isSelected
-                    ? "cursor-not-allowed bg-gray-100 opacity-60"
-                    : "hover:bg-gray-50"
+                    ? "cursor-not-allowed bg-[#f4f6f1] opacity-60"
+                      : "hover:bg-[#fbfaf7]"
                 }`}
               >
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-sm font-semibold text-[#34443d]">
                     {product.productName}
                   </p>
 
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-1 text-xs text-[#7b8780]">
                     Stock: {product.stock}{" "}
                     {product.quantityType}
                   </p>
                 </div>
 
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-[#34443d]">
                   ₹{product.sellingPrice.toFixed(2)}
                 </p>
               </button>
@@ -131,7 +131,7 @@ const ProductSelector = ({
       {/* Selected Products */}
       {selectedProducts.length > 0 && (
         <div className="mt-6">
-          <h3 className="text-sm font-semibold text-gray-900">
+          <h3 className="text-sm font-semibold text-[#25342e]">
             Selected Products
           </h3>
 
@@ -139,14 +139,14 @@ const ProductSelector = ({
             {selectedProducts.map((product) => (
               <div
                 key={product._id}
-                className="flex flex-col gap-3 rounded-lg border border-gray-200 p-4 sm:flex-row sm:items-center sm:justify-between"
+                className="flex flex-col gap-3 rounded-md border border-[#eeeae2] p-4 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
-                  <p className="font-semibold text-gray-900">
+                  <p className="font-semibold text-[#34443d]">
                     {product.productName}
                   </p>
 
-                  <p className="mt-1 text-sm text-gray-500">
+                  <p className="mt-1 text-sm text-[#7b8780]">
                     ₹{product.sellingPrice.toFixed(2)} /{" "}
                     {product.quantityType}
                   </p>

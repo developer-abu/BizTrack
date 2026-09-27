@@ -1,3 +1,4 @@
+import shopRegister from "../models/register.models.js";
 import registerShop from "../service/register.service.js";
 import verifyEmail from "../service/verify-email.service.js";
 
@@ -37,12 +38,14 @@ export const controllerForEmailVerification = async (req, res, next) => {
 
 export const controllerForAuthenticateUser = async (req, res, next) => {
   try {
+    const shop = await shopRegister.findById(req.shopId).select(
+      "shopName email phone isVerified"
+    );
+
     return res.status(200).json({
       success: true,
       message: "Authenticated",
-      data: {
-        shopId: req.shopId,
-      },
+      data: shop,
     });
   } catch (error) {
     next(error);

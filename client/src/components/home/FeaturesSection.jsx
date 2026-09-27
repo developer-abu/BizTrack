@@ -6,54 +6,54 @@ const FeaturesSection = () => {
     {
       title: "Product Management",
       description:
-        "Add, update, and manage your business products with prices, stock, and low-stock thresholds.",
+        "Add and update products, including their prices and stock details.",
     },
     {
-      title: "Inventory Management",
+      title: "Stock Updates",
       description:
-        "Keep track of available stock and automatically update inventory when sales are completed.",
+        "Add stock to existing products and keep your inventory up to date.",
     },
     {
-      title: "Sales Management",
+      title: "Low-Stock List",
       description:
-        "Create multi-product sales, calculate totals, record payments, and generate receipts.",
+        "See which products are running low so you know what may need restocking.",
     },
     {
-      title: "Customer Management",
+      title: "Sales & Receipts",
       description:
-        "Manage registered customers, view purchase history, and keep track of outstanding balances.",
+        "Create sales, record payments, and access previous sales and receipts.",
     },
     {
-      title: "Payment Tracking",
+      title: "Due Payments",
       description:
-        "Record customer payments and easily track paid, partial, and outstanding dues.",
+        "Update payments for sales with outstanding balances.",
     },
     {
-      title: "Dashboard & Reports",
+      title: "Full Product List",
       description:
-        "View important business metrics, recent sales, revenue, stock status, and outstanding dues.",
+        "Browse the products you have added to your shop.",
     },
   ];
 
   return (
     // Features section
-    <section id="features" className="bg-gray-50 py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="features" className="bg-[#fbfaf7] py-24 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Section heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="max-w-2xl">
+          <h2 className="font-serif text-4xl leading-tight text-[#202a27] sm:text-5xl">
             Everything You Need to Manage Your Business
           </h2>
 
-          <p className="mt-4 text-base leading-7 text-gray-600">
+          <p className="mt-5 max-w-xl text-base leading-8 text-[#65716c]">
             BizTrack brings your everyday business operations together in one
             simple and organized system.
           </p>
         </div>
 
         {/* Feature cards */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden border border-[#e5e1d8] bg-[#e5e1d8] sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}

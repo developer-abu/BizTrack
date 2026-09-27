@@ -55,7 +55,7 @@ const RegisterForm = () => {
   }
   return (
     // Register form
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+    <form onSubmit={handleSubmit} className="surface-shadow space-y-5 rounded-lg border border-[#dedbd3] bg-white p-6 sm:p-8">
 
       {/* Business name */}
       <FormInput
@@ -64,7 +64,7 @@ const RegisterForm = () => {
         name="shopName"
         placeholder="Enter your business name"
       />
-<p className="mt-1 text-sm text-gray-800 font-[poppins]">
+<p className="mt-1 text-sm text-[#65716c]">
   At least 5 characters. Only letters and spaces are allowed.
 </p>
       {/* Email */}
@@ -82,7 +82,7 @@ const RegisterForm = () => {
         name="phone"
         placeholder="Enter your phone number"
       />
-<p className="mt-1 text-sm text-gray-800 font-[poppins]">
+<p className="mt-1 text-sm text-[#65716c]">
  Mobile number must be exactly 10 digits.
 </p>
       {/* Password */}
@@ -91,7 +91,7 @@ const RegisterForm = () => {
         name="password"
         placeholder="Create a password"
       />
-<p className="mt-1 text-sm text-gray-800 font-[poppins]">
+<p className="mt-1 text-sm text-[#65716c]">
   Must be at least 6 character,<br/>
   Max 12 characters are allowed, <br/>
   At least one uppercase , one lowercase and one special character.
@@ -102,7 +102,7 @@ const RegisterForm = () => {
         name="confirmPassword"
         placeholder="Confirm your password"
       />
-<p className="mt-1 text-sm text-gray-800 font-[poppins]">
+<p className="mt-1 text-sm text-[#65716c]">
   Must match your password.
 </p>
 {/* showing error or success message */}
@@ -125,7 +125,7 @@ const RegisterForm = () => {
       <button
         type="submit"
         disabled={isLoading}
-        className=" cursor-pointer w-full rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2  disabled:cursor-not-allowed"
+        className="w-full cursor-pointer rounded-md bg-[#27624f] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1d4e3e] focus:outline-none focus:ring-2 focus:ring-[#34715f] focus:ring-offset-2 disabled:cursor-not-allowed"
       >
     {isLoading ? "Creating Account..." : "Create Account"}
       </button>

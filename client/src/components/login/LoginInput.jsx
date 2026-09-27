@@ -30,11 +30,7 @@ const LoginInput = () => {
       setSuccessMessage(response.data.message);
 
   setTimeout(() => {
-  navigate("/dashboard", {
-    state: {
-      shop: response.data.data,
-    },
-  });
+  navigate("/dashboard");
 }, 2000);
 
         } catch (error) {
@@ -50,7 +46,7 @@ const LoginInput = () => {
   
   return (
     // Login form
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+    <form onSubmit={handleSubmit} className="surface-shadow space-y-5 rounded-lg border border-[#dedbd3] bg-white p-6 sm:p-8">
 
       {/* Email */}
       <FormInput
@@ -69,13 +65,13 @@ const LoginInput = () => {
 
       {/* showing any error message */}
   {errorMessage && (
-        <p className="mt-3 text-sm text-red-500">
+        <p className="mt-3 text-sm text-red-600">
           {errorMessage}
         </p>
       )}
 {/* showing login success message */}
       {successMessage && (
-        <p className="mt-3 text-sm text-green-600">
+        <p className="mt-3 text-sm text-[#34715f]">
           {successMessage}
         </p>
       )}
@@ -83,7 +79,7 @@ const LoginInput = () => {
       <div className="flex justify-end">
         <Link
           to="/forgot-password"
-          className="text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline"
+          className="text-sm font-medium text-[#65716c] hover:text-[#27624f] hover:underline"
         >
           Forgot password?
         </Link>
@@ -93,7 +89,7 @@ const LoginInput = () => {
       <button
         type="submit"
          disabled={isLoading}
-        className="cursor-pointer w-full rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2  disabled:cursor-not-allowed"
+        className="w-full cursor-pointer rounded-md bg-[#27624f] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1d4e3e] focus:outline-none focus:ring-2 focus:ring-[#34715f] focus:ring-offset-2 disabled:cursor-not-allowed"
       >
   {isLoading ? "Logging in..." : "Login"}
       </button>

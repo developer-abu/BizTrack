@@ -43,6 +43,15 @@ verificationTokenExpires: {
   index: {
   expireAfterSeconds: 0,
 },
+resetPasswordToken: {
+  type: String,
+  default: null,
+},
+
+resetPasswordTokenExpires: {
+  type: Date,
+  default: null,
+},
 },
   },
   {

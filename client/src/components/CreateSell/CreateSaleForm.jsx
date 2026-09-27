@@ -84,7 +84,7 @@ const CreateSaleForm = () => {
       {errorMessage && (
         <div
           role="alert"
-          className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+          className="rounded-md border border-[#e7c4b7] bg-[#f8eee5] p-4 text-sm text-[#a65c39]"
         >
           {errorMessage}
         </div>
@@ -93,7 +93,7 @@ const CreateSaleForm = () => {
       {successMessage && (
         <div
           role="status"
-          className="rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-700"
+          className="rounded-md border border-[#c9d9ce] bg-[#edf3ee] p-4 text-sm text-[#34715f]"
         >
           <p className="font-semibold">{successMessage}</p>
 
