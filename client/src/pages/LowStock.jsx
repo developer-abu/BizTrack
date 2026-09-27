@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import api from "../api/axios.js";
 import { useNavigate } from "react-router-dom";
 const LowStock = () => {
@@ -105,6 +106,9 @@ setTimeout(() => {
 
   return (
     <div className="min-h-screen bg-[#f7f4ed] p-4 sm:p-6 lg:p-8">
+      <Helmet>
+        <title>Low Stock Products | BizTrack</title>
+      </Helmet>
       <div className="mx-auto max-w-7xl">
 
         {/* Page Header */}

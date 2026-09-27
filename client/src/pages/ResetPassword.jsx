@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import api from "../api/axios.js";
 
@@ -62,6 +63,9 @@ const ResetPassword = () => {
   if (!token) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f7f4ed] px-4 py-10 sm:px-6 lg:px-8">
+        <Helmet>
+          <title>Invalid Reset Link | BizTrack</title>
+        </Helmet>
         <div className="w-full max-w-lg">
           <div className="mb-8 text-center">
             <Link
@@ -95,6 +99,9 @@ const ResetPassword = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f7f4ed] px-4 py-10 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>{success ? "Password Reset | BizTrack" : "Reset Password | BizTrack"}</title>
+      </Helmet>
       <div className="w-full max-w-lg">
         <div className="mb-8 text-center">
           <Link

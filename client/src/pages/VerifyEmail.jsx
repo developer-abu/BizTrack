@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import api from '../api/axios.js';
 
@@ -43,6 +44,15 @@ const VerifyEmail = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f7f4ed] px-4">
+      <Helmet>
+        <title>
+          {isLoading
+            ? "Verifying Email | BizTrack"
+            : isSuccess
+              ? "Email Verified | BizTrack"
+              : "Email Verification Failed | BizTrack"}
+        </title>
+      </Helmet>
       <div className="surface-shadow w-full max-w-md rounded-lg border border-[#dedbd3] bg-white p-8 text-center">
 
         {isLoading ? (

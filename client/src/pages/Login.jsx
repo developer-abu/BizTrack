@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import LoginFooter from '../components/login/LoginFooter'
 import LoginInput from '../components/login/LoginInput'
 import LoginHeader from '../components/login/LoginHeader'
@@ -6,6 +7,9 @@ import LoginHeader from '../components/login/LoginHeader'
 const Login = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f7f4ed] px-4 py-10 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>Login | BizTrack</title>
+      </Helmet>
       <div className="w-full max-w-lg">
         <LoginHeader />
         <LoginInput />

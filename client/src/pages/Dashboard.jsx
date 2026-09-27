@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import DashboardHeader from '../components/dashboard/DashboardHeader'
 import QuickActions from '../components/dashboard/QuickActions '
 import AccountActions from '../components/dashboard/AccountActions .jsx'
@@ -32,6 +33,9 @@ const location = useLocation();
 
   return (
     <div className="min-h-screen bg-[#f7f4ed] pb-12">
+      <Helmet>
+        <title>Dashboard | BizTrack</title>
+      </Helmet>
       <DashboardHeader/>
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
      {isLoading ? (
