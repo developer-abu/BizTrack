@@ -374,7 +374,7 @@ No ignored environment file or secret value was opened or included in this docum
 - The server's `npm test` script is a placeholder that prints an error and exits unsuccessfully. No automated test files or test runner were found in the permitted project inventory.
 - No deployment manifest, CI workflow, or production deployment script was found. Deployment instructions beyond setting the documented runtime configuration would be speculative.
 
-## Limitations and improvement opportunities
+
 
 The following are confirmed from the current source and are not silently corrected here:
 
