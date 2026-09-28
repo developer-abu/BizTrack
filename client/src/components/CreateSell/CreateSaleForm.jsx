@@ -112,11 +112,12 @@ const CreateSaleForm = () => {
         setSelectedProducts={setSelectedProducts}
       />
 
-      <SaleSummary
-        selectedProducts={selectedProducts}
-        givenAmount={givenAmount}
-        setGivenAmount={setGivenAmount}
-      />
+  <SaleSummary
+  selectedProducts={selectedProducts}
+  setSelectedProducts={setSelectedProducts}
+  givenAmount={givenAmount}
+  setGivenAmount={setGivenAmount}
+/>
 
       <SaleActions isLoading={isLoading} />
     </form>
