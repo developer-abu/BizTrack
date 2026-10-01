@@ -7,9 +7,9 @@ import ShopDetails from '../components/dashboard/ShopDetails.jsx'
 import api from '../api/axios.js'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useLocation } from "react-router-dom";
+
 const Dashboard = () => {
-const location = useLocation();
+
 
   const [shop, setShop] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +28,7 @@ const location = useLocation();
     };
 
     fetchShop();
-  }, [location.key]);
+  }, []);
 
 
   return (
