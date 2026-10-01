@@ -55,9 +55,9 @@ setIsDeletingAccount(true)
   try {
     const response = await api.delete("/delete");
 
-    if (response.data.success) {
-      navigate("/login")
-    }
+ if (response.data.success) {
+  navigate("/login", { replace: true });
+}
 
   } catch (error) {
    
